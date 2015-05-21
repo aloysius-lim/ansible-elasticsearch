@@ -1,10 +1,10 @@
 env:
   - PLATFORM=centos-6
   - PLATFORM=centos-7
-  - PLATFORM=debian-jessie
   - PLATFORM=debian-wheezy
+  - PLATFORM=debian-jessie
   - PLATFORM=ubuntu-precise
-  - PLATFORM=ubuntu-precise
+  - PLATFORM=ubuntu-trusty
 
 sudo: true
 
