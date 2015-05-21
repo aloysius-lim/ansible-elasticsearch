@@ -12,4 +12,4 @@ install:
   - curl -sLo - https://github.com/moul/travis-docker/raw/master/install.sh | sh -xe
 
 script:
-  - ./run 'docker build -f test/$PLATFORM.Dockerfile -t test-$PLATFORM . && docker run --name $PLATFORM test-$PLATFORM'
+  - ./run 'docker build -f tests/$PLATFORM.Dockerfile -t test-$PLATFORM . && docker run --name $PLATFORM test-$PLATFORM'
