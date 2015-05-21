@@ -5,12 +5,12 @@ machine:
 
 dependencies:
   override:
-    - docker build -f tests/centos-6.Dockerfile       -t centos-6       .
-    - docker build -f tests/centos-7.Dockerfile       -t centos-7       .
-    - docker build -f tests/debian-wheezy.Dockerfile  -t debian-wheezy  .
-    - docker build -f tests/debian-jessie.Dockerfile  -t debian-jessie  .
-    - docker build -f tests/ubuntu-precise.Dockerfile -t ubuntu-precise .
-    - docker build -f tests/ubuntu-trusty.Dockerfile  -t ubuntu-trusty  .
+    - docker build --file=tests/centos-6.Dockerfile       --tag=centos-6       .
+    - docker build --file=tests/centos-7.Dockerfile       --tag=centos-7       .
+    - docker build --file=tests/debian-wheezy.Dockerfile  --tag=debian-wheezy  .
+    - docker build --file=tests/debian-jessie.Dockerfile  --tag=debian-jessie  .
+    - docker build --file=tests/ubuntu-precise.Dockerfile --tag=ubuntu-precise .
+    - docker build --file=tests/ubuntu-trusty.Dockerfile  --tag=ubuntu-trusty  .
 
 test:
   override:
