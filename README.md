@@ -1,5 +1,7 @@
 # Elasticsearch
 
+![Travis CI build status](https://api.travis-ci.org/abtpeople/ansible-elasticsearch.svg)
+
 Ansible role to install Elasticsearch on Debian (Ubuntu) and Enterprise Linux (RedHat, CentOS) systems, with full configuration capabilities. This role uses the [official packages](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html) from Elastic. It may also work on Fedora and Amazon Linux, but these have not been tested.
 
 ### *Coming Soon*
@@ -119,4 +121,4 @@ MIT
 
 Aloysius Lim ([GitHub](https://github.com/aloysius-lim))
 
-About People, a data science and design consultancy ([GitHub](https://github.com/abtpeople))
+[About People](http://www.abtpeople.com/), a data science and design consultancy ([GitHub](https://github.com/abtpeople))
