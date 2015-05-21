@@ -26,8 +26,12 @@ Vagrant.configure(2) do |config|
       # mismatch
       if machine[0].start_with? "debian"
         m.vm.provision "shell", inline: <<-SHELL
-          sudo apt-get install -y netselect-apt &&
-          sudo netselect-apt -ns -o /etc/apt/sources.list #{machine[0][7..-1]}
+          # Run only on the first provisioning
+          if [ ! -f /usr/bin/netselect-apt ]; then
+            sudo apt-get update
+            sudo apt-get install -y netselect-apt &&
+            sudo netselect-apt -ns -o /etc/apt/sources.list #{machine[0][7..-1]}
+          fi
         SHELL
       end
       # Use nearest mirror in Ubuntu, which may help prevent network problems when installing packages, e.g. hash sum
