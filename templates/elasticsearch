@@ -1,6 +1,7 @@
 # Run Elasticsearch as this user ID and group ID
 #ES_USER=elasticsearch
 {% if es_default_es_user is defined %}ES_USER={{ es_default_es_user }}{% endif %}
+
 #ES_GROUP=elasticsearch
 {% if es_default_es_group is defined %}ES_GROUP={{ es_default_es_group }}{% endif %}
 

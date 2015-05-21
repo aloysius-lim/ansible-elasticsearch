@@ -52,6 +52,7 @@
 #
 #node.data: true
 {% if es_etc_node_master is defined %}node.master: {{ es_etc_node_master }}{% endif %}
+
 {% if es_etc_node_data is defined %}node.data: {{ es_etc_node_data }}{% endif %}
 
 # You can exploit these settings to design advanced cluster topologies.
@@ -305,6 +306,7 @@
 #
 #cluster.routing.allocation.node_initial_primaries_recoveries: 4
 {% if es_etc_cluster_routing_allocation_node_initial_primaries_recoveries is defined %}cluster.routing.allocation.node_initial_primaries_recoveries: {{ es_etc_cluster_routing_allocation_node_initial_primaries_recoveries }}{% endif %}
+
 #
 # 2. During adding/removing nodes, rebalancing, etc
 #
@@ -353,6 +355,7 @@
 #
 #discovery.zen.ping.multicast.enabled: false
 {% if es_etc_discovery_zen_ping_multicast_enabled is defined %}discovery.zen.ping.multicast.enabled: {{ es_etc_discovery_zen_ping_multicast_enabled }}{% endif %}
+
 #
 # 2. Configure an initial list of master nodes in the cluster
 #    to perform discovery when new nodes (master or data) are started:
@@ -391,8 +394,11 @@
 #index.search.slowlog.threshold.query.debug: 2s
 #index.search.slowlog.threshold.query.trace: 500ms
 {% if es_etc_index_search_slowlog_threshold_query_warn is defined %}index.search.slowlog.threshold.query.warn: {{ es_etc_index_search_slowlog_threshold_query_warn }}{% endif %}
+
 {% if es_etc_index_search_slowlog_threshold_query_info is defined %}index.search.slowlog.threshold.query.info: {{ es_etc_index_search_slowlog_threshold_query_info }}{% endif %}
+
 {% if es_etc_index_search_slowlog_threshold_query_debug is defined %}index.search.slowlog.threshold.query.debug: {{ es_etc_index_search_slowlog_threshold_query_debug }}{% endif %}
+
 {% if es_etc_index_search_slowlog_threshold_query_trace is defined %}index.search.slowlog.threshold.query.trace: {{ es_etc_index_search_slowlog_threshold_query_trace }}{% endif %}
 
 #index.search.slowlog.threshold.fetch.warn: 1s
@@ -400,8 +406,11 @@
 #index.search.slowlog.threshold.fetch.debug: 500ms
 #index.search.slowlog.threshold.fetch.trace: 200ms
 {% if es_etc_index_search_slowlog_threshold_fetch_warn is defined %}index.search.slowlog.threshold.fetch.warn: {{ es_etc_index_search_slowlog_threshold_fetch_warn }}{% endif %}
+
 {% if es_etc_index_search_slowlog_threshold_fetch_info is defined %}index.search.slowlog.threshold.fetch.info: {{ es_etc_index_search_slowlog_threshold_fetch_info }}{% endif %}
+
 {% if es_etc_index_search_slowlog_threshold_fetch_debug is defined %}index.search.slowlog.threshold.fetch.debug: {{ es_etc_index_search_slowlog_threshold_fetch_debug }}{% endif %}
+
 {% if es_etc_index_search_slowlog_threshold_fetch_trace is defined %}index.search.slowlog.threshold.fetch.trace: {{ es_etc_index_search_slowlog_threshold_fetch_trace }}{% endif %}
 
 #index.indexing.slowlog.threshold.index.warn: 10s
@@ -409,8 +418,11 @@
 #index.indexing.slowlog.threshold.index.debug: 2s
 #index.indexing.slowlog.threshold.index.trace: 500ms
 {% if es_etc_index_indexing_slowlog_threshold_index_warn is defined %}index.indexing.slowlog.threshold.index.warn: {{ es_etc_index_indexing_slowlog_threshold_index_warn }}{% endif %}
+
 {% if es_etc_index_indexing_slowlog_threshold_index_info is defined %}index.indexing.slowlog.threshold.index.info: {{ es_etc_index_indexing_slowlog_threshold_index_info }}{% endif %}
+
 {% if es_etc_index_indexing_slowlog_threshold_index_debug is defined %}index.indexing.slowlog.threshold.index.debug: {{ es_etc_index_indexing_slowlog_threshold_index_debug }}{% endif %}
+
 {% if es_etc_index_indexing_slowlog_threshold_index_trace is defined %}index.indexing.slowlog.threshold.index.trace: {{ es_etc_index_indexing_slowlog_threshold_index_trace }}{% endif %}
 
 ################################## GC Logging ################################
@@ -419,14 +431,18 @@
 #monitor.jvm.gc.young.info: 700ms
 #monitor.jvm.gc.young.debug: 400ms
 {% if es_etc_monitor_jvm_gc_young_warn is defined %}monitor.jvm.gc.young.warn: {{ es_etc_monitor_jvm_gc_young_warn }}{% endif %}
+
 {% if es_etc_monitor_jvm_gc_young_info is defined %}monitor.jvm.gc.young.info: {{ es_etc_monitor_jvm_gc_young_info }}{% endif %}
+
 {% if es_etc_monitor_jvm_gc_young_debug is defined %}monitor.jvm.gc.young.debug: {{ es_etc_monitor_jvm_gc_young_debug }}{% endif %}
 
 #monitor.jvm.gc.old.warn: 10s
 #monitor.jvm.gc.old.info: 5s
 #monitor.jvm.gc.old.debug: 2s
 {% if es_etc_monitor_jvm_gc_old_warn is defined %}monitor.jvm.gc.old.warn: {{ es_etc_monitor_jvm_gc_old_warn }}{% endif %}
+
 {% if es_etc_monitor_jvm_gc_old_info is defined %}monitor.jvm.gc.old.info: {{ es_etc_monitor_jvm_gc_old_info }}{% endif %}
+
 {% if es_etc_monitor_jvm_gc_old_debug is defined %}monitor.jvm.gc.old.debug: {{ es_etc_monitor_jvm_gc_old_debug }}{% endif %}
 
 ################################## Security ################################
