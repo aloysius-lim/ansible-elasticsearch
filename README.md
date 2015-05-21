@@ -1,6 +1,6 @@
 # Elasticsearch
 
-![Travis CI build status](https://api.travis-ci.org/abtpeople/ansible-elasticsearch.svg)
+[![Travis CI build status](https://api.travis-ci.org/abtpeople/ansible-elasticsearch.svg)](https://travis-ci.org/abtpeople/ansible-elasticsearch)
 
 Ansible role to install Elasticsearch on Debian (Ubuntu) and Enterprise Linux (RedHat, CentOS) systems, with full configuration capabilities. This role uses the [official packages](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html) from Elastic. It may also work on Fedora and Amazon Linux, but these have not been tested.
 
@@ -16,14 +16,14 @@ Ansible role to install Elasticsearch on Debian (Ubuntu) and Enterprise Linux (R
 
 ## Status
 
-Operating System | Release | Status                                                                                                                                                                                          |
----------------- | ------- | ------                                                                                                                                                                                          |
-centos           | 6       | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
-centos           | 7       | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)         |
-debian           | wheezy  | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)         |
-debian           | jessie  | ![Vagrant failed](https://img.shields.io/badge/vagrant-failed-red.svg?style=flat-square)         ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
-ubuntu           | precise | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
-ubuntu           | trusty  | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
+Operating System | Release | Status                                                                                                                                                                                                    |
+---------------- | ------- | ------                                                                                                                                                                                                    |
+centos           | 6       | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
+centos           | 7       | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)](#)         |
+debian           | wheezy  | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)](#)         |
+debian           | jessie  | [![Vagrant failed](https://img.shields.io/badge/vagrant-failed-red.svg?style=flat-square)](#)         [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
+ubuntu           | precise | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
+ubuntu           | trusty  | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
 
 ## Requirements
 Java 7 or higher, as specified in the [Elasticsearch manual](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html#jvm-version). This role does not install Java; you may use your preferred role to install a suitable Java JRE on all Elasticsearch hosts.
