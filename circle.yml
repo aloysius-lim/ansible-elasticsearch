@@ -8,9 +8,4 @@ test:
     - tests/docker-test.sh:
         parallel: true
         files:
-          - centos-6
-          - centos-7
-          - debian-jessie
-          - debian-wheezy
-          - ubuntu-precise
-          - ubuntu-precise
+          - tests/*.Dockerfile
