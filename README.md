@@ -19,9 +19,9 @@ Ansible role to install Elasticsearch on Debian (Ubuntu) and Enterprise Linux (R
 Operating System | Release | Status                                                                                                                                                                                          |
 ---------------- | ------- | ------                                                                                                                                                                                          |
 centos           | 6       | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
-centos           | 7       | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker failed](https://img.shields.io/badge/docker-failed-brightred.svg?style=flat-square)   |
-debian           | wheezy  | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker failed](https://img.shields.io/badge/docker-fauked-brightred.svg?style=flat-square)   |
-debian           | jessie  | ![Vagrant failed](https://img.shields.io/badge/vagrant-failed-brightred.svg?style=flat-square)   ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
+centos           | 7       | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)         |
+debian           | wheezy  | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)         |
+debian           | jessie  | ![Vagrant failed](https://img.shields.io/badge/vagrant-failed-red.svg?style=flat-square)         ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
 ubuntu           | precise | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
 ubuntu           | trusty  | ![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square) ![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square) |
 
