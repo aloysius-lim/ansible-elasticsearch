@@ -3,9 +3,20 @@ machine:
   services:
     - docker
 
+dependencies:
+  override:
+    - docker build -f tests/centos-6.Dockerfile       -t centos-6       .
+    - docker build -f tests/centos-7.Dockerfile       -t centos-7       .
+    - docker build -f tests/debian-wheezy.Dockerfile  -t debian-wheezy  .
+    - docker build -f tests/debian-jessie.Dockerfile  -t debian-jessie  .
+    - docker build -f tests/ubuntu-precise.Dockerfile -t ubuntu-precise .
+    - docker build -f tests/ubuntu-trusty.Dockerfile  -t ubuntu-trusty  .
+
 test:
   override:
-    - tests/docker-test.sh:
-        parallel: true
-        files:
-          - tests/*.Dockerfile
+    - docker run centos-6
+    - docker run centos-7
+    - docker run debian-wheezy
+    - docker run debian-jessie
+    - docker run ubuntu-precise
+    - docker run ubuntu-trusty
