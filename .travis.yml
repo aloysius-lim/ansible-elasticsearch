@@ -1,0 +1,15 @@
+env:
+  - PLATFORM=centos-6
+  - PLATFORM=centos-7
+  - PLATFORM=debian-jessie
+  - PLATFORM=debian-wheezy
+  - PLATFORM=ubuntu-precise
+  - PLATFORM=ubuntu-precise
+
+sudo: true
+
+install:
+  - curl -sLo - https://github.com/moul/travis-docker/raw/master/install.sh | sh -xe
+
+script:
+  - ./run 'docker build -f test/$PLATFORM.Dockerfile -t test-$PLATFORM . && docker run --name $PLATFORM test-$PLATFORM'

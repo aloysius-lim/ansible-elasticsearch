@@ -1,0 +1,17 @@
+---
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+
+- include: redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- name: Copy /etc/default/elasticsearch
+  template: src=elasticsearch dest=/etc/default/elasticsearch
+  notify: Restart elasticsearch
+
+- name: Copy /etc/elasticsearch/elasticsearch.yml
+  template: src=elasticsearch.yml dest=/etc/elasticsearch/elasticsearch.yml
+  notify: Restart elasticsearch
+
+- name: Set elasticsearch service to start on boot
+  service: name=elasticsearch enabled=yes

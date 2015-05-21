@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: Aloysius Lim
+  description: Elasticsearch on Debian (Ubuntu) and Enterprise Linux (RedHat, CentOS) platforms, with full configuration capabilities
+  company: About People
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Amazon
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+  categories:
+    - database
+    - database:nosql
+dependencies: []
+
