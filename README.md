@@ -4,17 +4,17 @@
 
 Ansible role to install Elasticsearch on Debian (Ubuntu) and Enterprise Linux (RedHat, CentOS) systems, with full configuration capabilities. This role uses the [official packages](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html) from Elastic. It may also work on Fedora and Amazon Linux, but these have not been tested.
 
-## Features
+### Features
 
 * Install any version of Elasticsearch that is available in the official repositories
 * Fully configure Elasticsearch settings through variables
 * Wait for Elasticsearch to be listening for connections before continuing with play
 
-## Coming Soon
+### Coming Soon
 
 * Install plugins
 
-## Status
+### Status
 
 Operating System | Release | Status                                                                                                                                                                                                    |
 ---------------- | ------- | ------                                                                                                                                                                                                    |
