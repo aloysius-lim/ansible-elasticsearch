@@ -1,7 +1,7 @@
 ---
 # Elasticsearch release and version to install
-es_release: "1.5"
-es_version: "{{ es_release }}.2"
+es_release: "1.6"
+es_version: "{{ es_release }}.0"
 
 # Wait for elasticsearch to be listening for connections before proceeding
 # (e.g. after install / restart)

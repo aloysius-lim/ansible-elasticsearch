@@ -21,7 +21,7 @@ Operating System | Release | Status                                             
 centos           | 6       | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
 centos           | 7       | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)](#)         |
 debian           | wheezy  | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker failed](https://img.shields.io/badge/docker-failed-red.svg?style=flat-square)](#)         |
-debian           | jessie  | [![Vagrant failed](https://img.shields.io/badge/vagrant-failed-red.svg?style=flat-square)](#)         [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
+debian           | jessie  | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
 ubuntu           | precise | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
 ubuntu           | trusty  | [![Vagrant passed](https://img.shields.io/badge/vagrant-passed-brightgreen.svg?style=flat-square)](#) [![Docker passed](https://img.shields.io/badge/docker-passed-brightgreen.svg?style=flat-square)](#) |
 
@@ -34,8 +34,8 @@ This role allows you to fully configure Elasticsearch using variables. Besides v
 
 These variables control the behavior of the role:
 
-* `es_release`: The release of Elasticsearch to install (default: `"1.5"`).
-* `es_version`: The version of Elasticsearch to install (default: `"1.5.2"`).
+* `es_release`: The release of Elasticsearch to install (default: `"1.6"`).
+* `es_version`: The version of Elasticsearch to install (default: `"1.6.0"`).
 * `es_wait_for_listen`: If set to true, whenever Elasticsearch is restarted, the playbook will wait for Elasticsearch to respond on port `es_etc_http_port` (default: `9200`) before proceeding (default: `"yes"`).
 
 ### /etc/default/elasticsearch
