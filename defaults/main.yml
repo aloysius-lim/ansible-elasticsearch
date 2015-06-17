@@ -7,6 +7,12 @@ es_version: "{{ es_release }}.0"
 # (e.g. after install / restart)
 es_wait_for_listen: yes
 
+# Plugins to install, specified as:
+# - name: <plugin name, including optional version string>
+#   url: <optional url to download the plugin from>
+#   plugin_file: <optional plugin file to check if the plugin is installed>
+es_plugins: []
+
 # Other settings can be set here
 
 # Settings in /etc/defaults/elasticsearch, for example:

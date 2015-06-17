@@ -9,9 +9,6 @@ Ansible role to install Elasticsearch on Debian (Ubuntu) and Enterprise Linux (R
 * Install any version of Elasticsearch that is available in the official repositories
 * Fully configure Elasticsearch settings through variables
 * Wait for Elasticsearch to be listening for connections before continuing with play
-
-### Coming Soon
-
 * Install plugins
 
 ### Status
@@ -95,6 +92,71 @@ http.max_header_size: 16kB
 transport.tcp.connect_timeout: 20s
 ```
 
+## Plugins
+
+To install plugins, set the `es_plugins` variable to the list of plugins to be installed, specifying the name, and optionally, the URL to download the plugin from, and the file to check if the plugin has been installed.
+
+The simplest way to install plugins is to specify the name of the plugin:
+
+```yaml
+---
+es_plugins:
+  - name: elasticsearch/marvel
+```
+
+The version to install may also be specified:
+
+```yaml
+---
+es_plugins:
+  - name: elasticsearch/marvel/1.3.1
+```
+
+Some plugins need to be downloaded from a custom URL:
+
+```yaml
+---
+es_plugins:
+  - name: elasticsearch-jetty-1.2.1
+    url: https://oss-es-plugins.s3.amazonaws.com/elasticsearch-jetty/elasticsearch-jetty-1.2.1.zip
+```
+
+The plugins will only be installed if `plugin_file` cannot be found. If not specified, then `plugin_file` will be the second component of the plugin `name` (i.e., after the first forward slash):
+
+```yaml
+---
+es_plugins:
+  # Will skip installation if /usr/share/elasticsearch/plugins/marvel directory exists
+  - name: elasticsearch/marvel/1.3.1
+```
+
+The example above does not check if the specific version of the plugin is installed, only that *some* version of it is. To make Ansible skip installation only if the specific version is installed, specify the path of the specific file to look for:
+
+```yaml
+---
+es_plugins:
+  # Will skip installation if /usr/share/elasticsearch/plugins/marvel/marvel-1.3.1.jar exists
+  - name: elasticsearch/marvel/1.3.1
+    plugin_file: marvel/marvel-1.3.1.jar
+```
+
+Unfortunately, this role cannot automatically determine the filename to check for, since naming conventions are inconsistent between plugins. Take these three plugins for example:
+
+```yaml
+---
+es_plugins:
+  # <plugin name>/<plugin name>-<plugin version>.jar
+  - name: elasticsearch/marvel/1.3.1
+    plugin_file: marvel/marvel-1.3.1.jar
+  # <plugin name>/ (no specific jar file, as this is a site plugin)
+  - name: lmenezes/elasticsearch-kopf/v1.5.4
+    plugin_file: kopf
+  # <plugin name>-<plugin version>/elasticsearch-<plugin name>-<plugin version>.jar
+  - name: elasticsearch-jetty-1.2.1
+    url: https://oss-es-plugins.s3.amazonaws.com/elasticsearch-jetty/elasticsearch-jetty-1.2.1.zip
+    plugin_file: jetty-1.2.1/elasticsearch-jetty-1.2.1.jar
+```
+
 ## Example Playbook
 
 ```yaml
@@ -109,6 +171,12 @@ transport.tcp.connect_timeout: 20s
       es_etc_cluster_name: my_cluster
       es_etc_node_master: true
       es_etc_node_data: false
+      es_plugins:
+        - name: elasticsearch/marvel/1.3.1
+          plugin_file: marvel/marvel-1.3.1.jar
+        - name: elasticsearch-jetty-1.2.1
+          url: https://oss-es-plugins.s3.amazonaws.com/elasticsearch-jetty/elasticsearch-jetty-1.2.1.zip
+          plugin_file: jetty-1.2.1/elasticsearch-jetty-1.2.1.jar
 
 # Data nodes
 - hosts: elasticsearch_data
@@ -118,6 +186,11 @@ transport.tcp.connect_timeout: 20s
       es_etc_cluster_name: my_cluster
       es_etc_node_master: false
       es_etc_node_data: true
+        - name: elasticsearch/marvel/1.3.1
+          plugin_file: marvel/marvel-1.3.1.jar
+        - name: elasticsearch-jetty-1.2.1
+          url: https://oss-es-plugins.s3.amazonaws.com/elasticsearch-jetty/elasticsearch-jetty-1.2.1.zip
+          plugin_file: jetty-1.2.1/elasticsearch-jetty-1.2.1.jar
 ```
 
 # License

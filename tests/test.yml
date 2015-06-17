@@ -2,6 +2,7 @@
 - hosts: all
   become: yes
   become_method: sudo
+
   roles:
     - java
     - role: ../../
@@ -49,3 +50,9 @@
         that:
           - '"cluster.name: test_cluster" in etc_result.stdout_lines'
           - '"http.max_header_size: 16kB" in etc_result.stdout_lines'
+
+    - name: Check installed plugins
+      command: ls {{ es_home }}/plugins/{{ item.plugin_file | default(item.name.split('/')[1]) }}
+      with_items: "{{ es_plugins }}"
+      register: ls_result
+      changed_when: ls_result.rc != 0
