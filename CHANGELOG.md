@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.0 (2015-06-17)
+
+Add ability to install plugins.
+
 ## v0.1.2 (2015-06-17)
 
 Update default version of Elasticsearch to 1.6.0.
