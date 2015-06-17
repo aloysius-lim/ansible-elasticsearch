@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
       # mismatch
       if machine[0].start_with? "ubuntu"
         m.vm.provision "shell", inline: <<-SHELL
-          sudo sed -i 's#http://.*ubuntu\.com/ubuntu/#mirror://mirrors.ubuntu.com/mirrors.txt#' \
+          sudo sed -ri 's#http://.*ubuntu\.com/ubuntu/?#mirror://mirrors.ubuntu.com/mirrors.txt#' \
             /etc/apt/sources.list
         SHELL
       end
