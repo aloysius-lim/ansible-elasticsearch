@@ -5,10 +5,6 @@
 - include: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- name: Copy /etc/default/elasticsearch
-  template: src=elasticsearch dest=/etc/default/elasticsearch
-  notify: Restart elasticsearch
-
 - name: Copy /etc/elasticsearch/elasticsearch.yml
   template: src=elasticsearch.yml dest=/etc/elasticsearch/elasticsearch.yml
   notify: Restart elasticsearch
