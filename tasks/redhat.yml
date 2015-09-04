@@ -5,6 +5,10 @@
 - name: Add ElasticSearch repository
   template: src=elasticsearch.repo dest=/etc/yum.repos.d/elasticsearch.repo
 
+- name: Copy /etc/sysconfig/elasticsearch
+  template: src=elasticsearch dest=/etc/sysconfig/elasticsearch
+  notify: Restart elasticsearch
+
 - name: Install ElasticSearch
   yum: name=elasticsearch-{{ es_version }} state=present
   notify: Restart elasticsearch

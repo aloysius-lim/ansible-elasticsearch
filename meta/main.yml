@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Aloysius Lim
-  description: Elasticsearch on Debian (Ubuntu) and Enterprise Linux (RedHat, CentOS) platforms, with full configuration capabilities
+  description: "Elasticsearch on Debian (Ubuntu) and Enterprise Linux (RedHat, CentOS) platforms, with full configuration capabilities"
   company: About People
   license: MIT
   min_ansible_version: 1.2

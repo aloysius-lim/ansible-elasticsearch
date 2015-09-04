@@ -7,6 +7,10 @@
     repo: 'deb http://packages.elasticsearch.org/elasticsearch/{{ es_release }}/debian stable main'
     state: present
 
+- name: Copy /etc/default/elasticsearch
+  template: src=elasticsearch dest=/etc/default/elasticsearch
+  notify: Restart elasticsearch
+
 - name: Install ElasticSearch
   apt: name=elasticsearch={{ es_version }} state=present
   notify: Restart elasticsearch
