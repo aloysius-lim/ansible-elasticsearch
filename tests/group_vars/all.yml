@@ -1,8 +1,13 @@
 ---
 es_plugins:
   - name: elasticsearch/marvel/1.3.1
+    url: http://download.elasticsearch.org/elasticsearch/marvel/marvel-1.3.1.zip
+    #http://search.maven.org/remotecontent?filepath=elasticsearch/marvel/1.3.1/marvel-1.3.1.zip
+
   - name: lmenezes/elasticsearch-kopf/v1.5.4
+    url: https://codeload.github.com/lmenezes/elasticsearch-kopf/zip/v1.5.4
     plugin_file: kopf
+
   - name: elasticsearch-jetty-1.2.1
     url: https://oss-es-plugins.s3.amazonaws.com/elasticsearch-jetty/elasticsearch-jetty-1.2.1.zip
     plugin_file: jetty-1.2.1/elasticsearch-jetty-1.2.1.jar

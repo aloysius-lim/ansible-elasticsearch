@@ -5,6 +5,10 @@
 - include: redhat.yml
   when: ansible_os_family == "RedHat"
 
+- name: Ensure /var/run/elasticsearch/ exists
+  # It crashes otherwise...
+  file: path=/var/run/elasticsearch/ state=directory
+
 - name: Copy /etc/elasticsearch/elasticsearch.yml
   template: src=elasticsearch.yml dest=/etc/elasticsearch/elasticsearch.yml
   notify: Restart elasticsearch

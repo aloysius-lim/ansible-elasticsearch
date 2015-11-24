@@ -6,11 +6,16 @@
   apt_repository:
     repo: 'deb http://packages.elasticsearch.org/elasticsearch/{{ es_release }}/debian stable main'
     state: present
+  register: add_elastic_repo
 
 - name: Copy /etc/default/elasticsearch
   template: src=elasticsearch dest=/etc/default/elasticsearch
   notify: Restart elasticsearch
 
+- name: Refresh apt-cache to get elastic packages
+  apt: update_cache=true
+  when: add_elastic_repo|changed
+
 - name: Install ElasticSearch
-  apt: name=elasticsearch={{ es_version }} state=present
+  apt: name=elasticsearch={{ es_version }} state=present update_cache=true cache_valid_time=1800
   notify: Restart elasticsearch
