@@ -180,6 +180,9 @@
 #path.plugins: /path/to/plugins
 {% if es_etc_path_plugins is defined %}path.plugins: {{ es_etc_path_plugins }}{% endif %}
 
+# Backup repo path
+#path.repo: ['/path/backup/repo', '/another/path']
+{% if es_etc_path_repo is defined %}path.repo: {{es_etc_path_repo}}{% endif %}
 
 #################################### Plugin ###################################
 
