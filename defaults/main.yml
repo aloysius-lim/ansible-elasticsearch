@@ -1,4 +1,8 @@
 ---
+# Set to "false" if you don't want to manage the package repositories from this
+# role. Usefull if are behind a proxy or have a custom mirror.
+es_manage_repos: true
+
 # Elasticsearch release and version to install
 es_release: "1.6"
 es_minor_release: "0"

@@ -34,6 +34,7 @@ These variables control the behavior of the role:
 * `es_release`: The release of Elasticsearch to install (default: `"1.6"`).
 * `es_version`: The version of Elasticsearch to install (default: `"1.6.0"`).
 * `es_wait_for_listen`: If set to true, whenever Elasticsearch is restarted, the playbook will wait for Elasticsearch to respond on port `es_etc_http_port` (default: `9200`) before proceeding (default: `"yes"`).
+* `es_manage_repos`: Manage the repositories from this module (default: `true`).
 
 ### /etc/default/elasticsearch
 

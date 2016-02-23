@@ -1,9 +1,11 @@
 ---
 - name: Add ElasticSearch repo public signing key
   rpm_key: key=https://packages.elastic.co/GPG-KEY-elasticsearch state=present
+  when: es_manage_repos
 
 - name: Add ElasticSearch repository
   template: src=elasticsearch.repo dest=/etc/yum.repos.d/elasticsearch.repo
+  when: es_manage_repos
 
 - name: Copy /etc/sysconfig/elasticsearch
   template: src=elasticsearch dest=/etc/sysconfig/elasticsearch
